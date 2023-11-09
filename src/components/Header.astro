@@ -1,0 +1,24 @@
+---
+import HeaderMenu from "./HeaderMenu.astro";
+---
+
+<nav>
+    <HeaderMenu />
+</nav>
+
+<style>
+    nav{
+        position:fixed;
+        top:0;
+        width: 100%;
+        height: 50px;
+        background-color: aqua;
+
+    }
+
+    @media screen and (max-width: 600px) {
+        nav{
+            display: none;
+        };
+    }
+</style>

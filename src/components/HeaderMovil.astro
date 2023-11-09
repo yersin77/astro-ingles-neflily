@@ -1,0 +1,137 @@
+
+<header class="header">
+    <section class="container">
+        
+        <buttom class="menu-btn">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+            >
+                <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"></path>
+            </svg>
+            <svg
+                class="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"
+                ></path>
+            </svg>
+        </buttom>
+
+        <nav class="menu">
+            <a href="/">Inicio</a>
+            <a href="metodologia">Metodología</a>
+            <a href="porque aprender ingles">Porque aprender ingles ?</a>
+            <a href="motivacion">Motivación</a>
+            <a href="cursos de ingles">Cursos de ingles</a>
+        </nav>
+    </section>
+</header>
+
+<style>
+    :root {
+        --header-height: 1.5rem;
+        --first-color: black;
+        --second-color: aqua;
+    }
+    .header {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 999;
+        padding: 1rem;
+        height: var(--header-height);
+        background-color: var(--second-color);
+    }
+
+    .header > .container {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-right: 1.5rem;
+        z-index: 1000;
+    }
+
+
+    .menu-btn {
+        outline: thin solid var(--second-color);
+        border: 0;
+        cursor: pointer;
+        background-color: var(--second-color);
+    }
+
+    .none {
+    display: none;
+}
+
+    .menu-btn svg {
+        fill: black;
+    }
+
+    .menu {
+        position: fixed;
+        left: 0;
+        bottom: 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--second-color);
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        pointer-events: none;
+    }
+
+    .menu.is-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu a {
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: var(--first-color);
+    }
+
+    .menu a:hover {
+        color: var(--second-color);
+        background-color: var(--first-color);
+    }
+
+    @media screen and (min-width:600px) {
+        header{
+            display: none;
+        }        
+    }
+    
+</style>
+
+<script>
+        const $btnMenu = document.querySelector(".menu-btn");
+        const $menu = document.querySelector(".menu");
+        $btnMenu?.addEventListener("click", (e) => {
+            $btnMenu.firstElementChild?.classList.toggle("none");
+            $btnMenu.lastElementChild?.classList.toggle("none");
+            $menu?.classList.toggle("is-active");
+        });
+
+        document.addEventListener("click", (e) =>{
+            
+            if(!(e.target as HTMLTextAreaElement).matches(".menu a")) return false;
+
+            $btnMenu?.firstElementChild?.classList.remove("none");
+            $btnMenu?.lastElementChild?.classList.add("none");
+            $menu?.classList.remove("is-active");
+
+        })
+
+</script>
