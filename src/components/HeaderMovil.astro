@@ -1,7 +1,5 @@
-
 <header class="header">
     <section class="container">
-        
         <buttom class="menu-btn">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +9,7 @@
             >
                 <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"></path>
             </svg>
+
             <svg
                 class="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -25,11 +24,11 @@
         </buttom>
 
         <nav class="menu">
-            <a href="/">Inicio</a>
-            <a href="/metodologia">Como aprender ?</a>
-            <a href="/porque-aprender-ingles">Porque aprender ingles ?</a>
-            <a href="/motivacion">Motivación</a>
-            <a href="/cursos-de-ingles">Cursos de ingles</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#como-aprender">Como aprender ?</a>
+            <a href="#porque-aprender-ingles">Porque aprender ingles ?</a>
+            <a href="#motivacion">Motivate !</a>
+            <a href="#cursos-de-ingles">Cursos de ingles</a>
         </nav>
     </section>
 </header>
@@ -59,7 +58,6 @@
         z-index: 1000;
     }
 
-
     .menu-btn {
         outline: thin solid var(--second-color);
         border: 0;
@@ -68,8 +66,8 @@
     }
 
     .none {
-    display: none;
-}
+        display: none;
+    }
 
     .menu-btn svg {
         fill: black;
@@ -82,7 +80,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        background-color:var(--second-color);
+        background-color: var(--second-color);
         opacity: 0;
         transition: opacity 0.5s ease-out;
         pointer-events: none;
@@ -107,31 +105,27 @@
         background-color: var(--first-color);
     }
 
-    @media screen and (min-width:600px) {
-        header{
+    @media screen and (min-width: 600px) {
+        header {
             display: none;
-        }        
+        }
     }
-    
 </style>
 
 <script>
-        const $btnMenu = document.querySelector(".menu-btn");
-        const $menu = document.querySelector(".menu");
-        $btnMenu?.addEventListener("click", (e) => {
-            $btnMenu.firstElementChild?.classList.toggle("none");
-            $btnMenu.lastElementChild?.classList.toggle("none");
-            $menu?.classList.toggle("is-active");
-        });
+    const $btnMenu = document.querySelector(".menu-btn");
+    const $menu = document.querySelector(".menu");
+    $btnMenu?.addEventListener("click", (e) => {
+        $btnMenu.firstElementChild?.classList.toggle("none");
+        $btnMenu.lastElementChild?.classList.toggle("none");
+        $menu?.classList.toggle("is-active");
+    });
 
-        document.addEventListener("click", (e) =>{
-            
-            if(!(e.target as HTMLTextAreaElement).matches(".menu a")) return false;
+    document.addEventListener("click", (e) => {
+        if (!(e.target as HTMLTextAreaElement).matches(".menu a")) return false;
 
-            $btnMenu?.firstElementChild?.classList.remove("none");
-            $btnMenu?.lastElementChild?.classList.add("none");
-            $menu?.classList.remove("is-active");
-
-        })
-
+        $btnMenu?.firstElementChild?.classList.remove("none");
+        $btnMenu?.lastElementChild?.classList.add("none");
+        $menu?.classList.remove("is-active");
+    });
 </script>

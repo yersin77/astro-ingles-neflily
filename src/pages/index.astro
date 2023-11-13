@@ -1,12 +1,21 @@
 ---
+import ComoAprender from "../components/Como-aprender.astro";
+import Inicio from "../components/Inicio.astro";
 import Layout from "../layouts/Layout.astro";
+import CursosDeIngles from "../components/Cursos-de-ingles.astro";
+import Motivacion from "../components/Motivacion.astro";
+import PorqueAprenderIngles from "../components/Porque-aprender-ingles.astro";
+import Footer from "../components/Footer.astro"
 ---
 
 <Layout title="Inicio">
-	<section>
-		<video  controls autoplay loop src="/image/video.mp4"></video>
-	</section>
-</Layout>
+	<Inicio />
+	<ComoAprender />
+	<PorqueAprenderIngles />
+	<Motivacion />
+	<CursosDeIngles />
+	<Footer />
+</Layout>	
 
 <style>
 	section video{

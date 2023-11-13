@@ -2,12 +2,12 @@
 import HeaderMenu from "./HeaderMenu.astro";
 ---
 
-<nav>
+<header>
     <HeaderMenu />
-</nav>
+</header>
 
 <style>
-    nav{
+    header{
         position:fixed;
         top:0;
         width: 100%;
@@ -17,7 +17,7 @@ import HeaderMenu from "./HeaderMenu.astro";
     }
 
     @media screen and (max-width: 600px) {
-        nav{
+        header{
             display: none;
         };
     }

@@ -1,0 +1,33 @@
+<footer>
+    <div>
+      <small>
+        Copyright &copy; <span id="copyright"></span> | All rights reserved
+      </small>
+    <div>  
+  </footer>
+
+  <style>
+    footer{
+      display: flex;
+      height: 10vh;
+      justify-content: center;
+      align-items: center;
+      background-color: blueviolet;
+    }
+    
+    small{
+      display: block;
+    }
+
+    @media screen and (max-width: 600px){
+      footer{
+        margin-bottom: 50px;
+        background-color: brown;
+      }
+    }
+  </style>
+  
+  <script>
+   const copy =  document.querySelector("#copyright") as HTMLTextAreaElement
+   copy.textContent = new Date().getFullYear().toString();
+  </script>
